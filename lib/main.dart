@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:game_party/simplequiz/before_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/services.dart';
 import 'api.dart';
-import 'gameSelection.dart';
+import 'game_selection.dart';
 import 'home.dart';
 
 const Color white = Color(0xFFFFFFFF);
@@ -15,7 +16,7 @@ const Color accentColor = Color(0xFF46726A); //#46726A
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  
+
   runApp(const MainApp());
   initPhoneSystem();
   
@@ -75,6 +76,9 @@ class MainApp extends StatelessWidget {
       ),
       routes: <String, WidgetBuilder>{
         '/gameSelection': (BuildContext context) => const GameSelectionPage(),
+        '/gameSelection/simpleQuizz': (BuildContext context) => const BeforeSQuiz(),
+        //'/gameSelection/simpleQuizz': (BuildContext context) => const GameSelectionPage(),
+        //'/gameSelection/simpleQuizz': (BuildContext context) => const GameSelectionPage(),
       },
       
     );

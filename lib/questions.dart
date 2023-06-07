@@ -44,13 +44,18 @@ class Question {
     }
 
     String formatedFetch = '${jsonDecode['question']['text']}///${jsonDecode['category']}///${jsonDecode['correctAnswer']}///${incorrect.join('///')}';
-    String result = await translate(formatedFetch, to: language);
-    final componentList = result.split('///');
-
-    incorrect = [];
-    for (var i = 3; i < componentList.length; i++) {
-      incorrect.add(componentList[i]);
+    var componentList = [];
+    if(language != 'en') {
+      String result = await translate(formatedFetch, to: language);
+      componentList = result.split('///');
+      incorrect = [];
+      for (var i = 3; i < componentList.length; i++) {
+        incorrect.add(componentList[i]);
+      }
+    } else {
+      componentList = formatedFetch.split('///');
     }
+    
 
     return Question(
       question: componentList[0],

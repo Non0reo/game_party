@@ -32,7 +32,7 @@ class _GameSelectionPageState extends State<GameSelectionPage> {
                 children: [
                   ElevatedButton(
                     onPressed: () {
-                      print('Game1');
+                      Navigator.pushNamed(context, '/gameSelection/simpleQuizz');
                     },
                     style: ButtonStyle(
                       fixedSize: MaterialStateProperty.all<Size>(Size(200, 100)),

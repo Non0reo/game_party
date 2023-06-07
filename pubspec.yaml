@@ -19,3 +19,8 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/icons/French.png
+    - assets/icons/English.png
+    - assets/icons/French_selected.png
+    - assets/icons/English_selected.png
